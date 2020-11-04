@@ -1,18 +1,18 @@
+#!/usr/bin/python
+
 import os, time, sys, logging
- 
-#Change this variable to reference a specific environment variable to create logging for
-ENV = 'HELLOWORLD'
+
 #References period of logging for ENV
 TIMER = 3
  
 def main():
  logging.basicConfig(filename='helloWorldReadApp.log', level=logging.INFO)
  
- if ENV not in os.environ:
-    logging.info('%s is not an environment variable', ENV)
+ if [1] not in os.environ:
+    logging.info('%s is not an environment variable', [1])
  else:
     print('Success')
-    logging.info('Logging envrionment variable %s', os.environ[ENV])
+    logging.info('Logging envrionment variable %s', os.environ[1])
  
 while True:
  main()

@@ -27,6 +27,9 @@
       command: cat ~/Developer/Ansible/.env
       register: ENV
     - debug: var=ENV.stdout
-    - name: Python application running through ENV as an argument
-      command: python ~/Developer/ansible/helloWorldReaderApp/hwreaderapp.py
-      when: ENV is defined
+    # - name: Python application running through ENV as an argument
+      # script: ~/Developer/ansible/helloWorldReaderApp/hwreaderapp.py
+    - name: Run Py script
+      command: ~/Developer/ansible/helloWorldReaderApp/hwreaderapp.py {{ result.content }}
+      become: yes
+      become_user: root

@@ -5,6 +5,10 @@
   gather_facts: false
   hosts: localhost
   tasks:
+    # - name: ansible create directory example
+      # file:
+        # path: /tmp/devops_directory
+        # state: directory
     - name: Clone a private repository into /opt.
       git:
         repo: git@github.com:shahe-islam/hello-world-reader-app.git
@@ -14,9 +18,11 @@
         force: yes
       # ssh-agent doesn't allow key to pass through remote sudo commands.
       become: no
-    - name: Run a script with arguments (free form)
-      script:  ~/Developer/Ansible/.env
-    # - name: Run a script using an executable in a system path
+    - name: Run env file
+      shell: ./.env
+      args:
+        chdir: ~/Developer/Ansible
+    # - name: Run Python Script
       # script: ~/Developer/Ansible/helloWorldReaderApp/hwreaderapp.py
       # args:
         # executable: python3

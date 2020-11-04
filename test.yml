@@ -1,0 +1,22 @@
+---
+
+- name: Playing with Ansible & Git
+  connection: local
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - name: Clone a private repository into /opt.
+      git:
+        repo: git@github.com:shahe-islam/hello-world-reader-app.git
+        version: master
+        dest: ~/Developer/Ansible
+        accept_hostkey: yes
+        force: yes
+      # ssh-agent doesn't allow key to pass through remote sudo commands.
+      become: no
+    - name: Run a script with arguments (free form)
+      script:  ~/Developer/Ansible/.env
+    # - name: Run a script using an executable in a system path
+      # script: ~/Developer/Ansible/helloWorldReaderApp/hwreaderapp.py
+      # args:
+        # executable: python3

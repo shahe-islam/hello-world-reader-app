@@ -1,2 +1,0 @@
-export HELLOWORLD=HELLOWORLD
-

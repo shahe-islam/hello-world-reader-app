@@ -28,6 +28,7 @@
       register: ENV
     - debug: var=ENV.stdout
     - name: Run Py script
-      command: ~/Developer/ansible/helloWorldReaderApp/hwreaderapp.py '{{ result }}' 3
+      command: ~/Developer/ansible/helloWorldReaderApp/hwreaderapp.py
+      environment: "{{ ENV }}"
       become: yes
       become_user: root

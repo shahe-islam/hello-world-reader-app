@@ -3,7 +3,7 @@
 import os, time, sys, logging
 
 #References period of logging for ENV
-ENV = sys.argv[1]
+ENV = HELLOWORLD
 TIMER = 3
  
 def main():

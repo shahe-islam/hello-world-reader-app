@@ -4,7 +4,7 @@ import os, time, sys, logging
 
 #References period of logging for ENV
 ENV = sys.argv[1]
-TIMER = sys.argv[2]
+TIMER = 3
  
 def main():
  logging.basicConfig(filename='helloWorldReadApp.log', level=logging.INFO)

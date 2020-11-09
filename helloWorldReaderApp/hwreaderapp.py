@@ -3,11 +3,11 @@
 import os, time, sys, logging
 
 #References period of logging for ENV
-ENV = HELLOWORLD
+ENV = 'HELLOWORLD'
 TIMER = 3
  
 def main():
- logging.basicConfig(filename='/var/log/helloWorldReadApp.log', level=logging.INFO)
+ logging.basicConfig(filename='helloWorldReadApp.log', level=logging.INFO)
  
  if ENV not in os.environ:
     logging.info('%s is not an environment variable', ENV)

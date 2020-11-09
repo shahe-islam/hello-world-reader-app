@@ -12,11 +12,9 @@ def main():
  if ENV not in os.environ:
     logging.info('%s is not an environment variable', ENV)
  else:
-    print('Success')
+    print(ENV + ' found')
     logging.info('Logging envrionment variable %s', os.environ[ENV])
  
 while True:
  main()
  time.sleep(TIMER)
-
- ### Look into addHandler for logging to print out the log to the screen effectively

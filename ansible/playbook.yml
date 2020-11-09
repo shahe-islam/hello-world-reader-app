@@ -1,0 +1,32 @@
+---
+
+- name: Playing with Ansible & Git
+  connection: local
+  gather_facts: false
+  hosts: localhost
+
+  # These variables are needed to bootstrap Ansible
+  vars:
+    ansible_sudo_password: '{{ lookup("env", "SUDO_PASSWORD") }}'
+    # etc.
+  tasks:
+    # - name: ansible create directory example
+    #   file:
+    #     path: /tmp/devops_directory
+    #     state: directory
+    # - name: Clone repo to local directory.
+    #   git:
+    #     repo: git@github.com:shahe-islam/hello-world-reader-app.git
+    #     version: master
+    #     dest: ~/Developer/Ansible
+    #     accept_hostkey: yes
+    #     force: yes
+    #   become: no
+    - name: Parsing .env file into local playbook variable for Python script
+      command: cat ~/Developer/Ansible/.env
+      register: ENV
+    - debug: var=ENV.stdout
+    - name: Run Py script
+      command: chmod +x ./hello_world_reader_app.py
+      environment: "{{ ENV }}"
+      become: no

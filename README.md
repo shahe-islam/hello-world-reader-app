@@ -34,3 +34,4 @@ cd ../ansible
 ansible-playbook playbook.yml
 ```
 
+The Ansible playbook will run the generated Python file and pick up the environment variable specified if it exists, passing through validation logs if true. 

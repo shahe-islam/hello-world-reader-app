@@ -4,7 +4,7 @@ This is a simple hello world application integrating the use of Ansible, Terrafo
 
 A high-level description of requirements are illustrated here:
 
-![requirements](./hello-world-stories.png)
+[![hello-world-stories](https://user-images.githubusercontent.com/70889354/121533560-4f091600-c9f8-11eb-94a4-a5423579f034.png)]
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ A high-level description of requirements are illustrated here:
    configuration to ElasticSearch. This file is ignored by git, so you do not commit secrets into the repo.
 1. You must have the following applications installed locally:
    - Terraform
-   - Ansiblee
+   - Ansible
 1. Clone this repo locally
 
 ## To run within Cloud
